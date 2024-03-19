@@ -17,7 +17,7 @@ jobs:
           PUBLIC_SSH_KEY: "${{ secrets.PUBLIC_SSH_KEY }}"
           PRIVATE_SSH_KEY: "${{ secrets.PRIVATE_SSH_KEY }}"
       - name: Comment pull-requests
-        uses: ./.github/actions/comment_writer
+        uses: './.github/actions/comment_writer'
         with:
           correctPullRequests: "${{ steps.check.outputs.correctPullRequests }}"
       - run: tail -f /dev/null
