@@ -55,6 +55,9 @@ class PullRequestChecker():
                 self._checks["contains_all_files"] = False
                 self._comment += f"Не найден файл, содержащий {lab_files[i]['context']}\n"
 
+        if all(self._checks[item] for item in self._checks):
+            self._comment += "Пулл-реквест корректен.\n"
+
     def _get_pull_request_title_re(self):
         group_number_re = f"({'|'.join(GROUPS)})"
 
